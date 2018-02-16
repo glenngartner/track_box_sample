@@ -36,8 +36,8 @@ app.view.element.appendChild(renderer.domElement);
 
 // our HUD renderer for 2D screen-fixed content.  This deals with stereo viewing in argon
 const hud = new (<any>THREE).CSS3DArgonHUD();
-var description = document.getElementById( 'description' );
-hud.hudElements[0].appendChild(description);
+// var description = document.getElementById( 'description' );
+// hud.hudElements[0].appendChild(description);
 app.view.element.appendChild(hud.domElement);
 
 // This application is based on the Decals demo for three.js.  We had to change
@@ -268,6 +268,16 @@ function loadLeePerrySmith() {
             shininess: 25
         } );
 
+        // var geometry = new THREE.BoxGeometry(1, 1, 1);
+
+        // var material = new THREE.MeshStandardMaterial( {
+        //     color: 0xaa0000,
+        //     roughness: .25,
+        //     metalness: 0
+        // });
+
+        // mesh.position.set(0, 0, 0);
+
         mesh = new THREE.Mesh( geometry, material );
 
         // add the model to the headModel object, not the scene
@@ -377,65 +387,62 @@ app.vuforia.init({
 Version: OpenPGP.js v2.3.2
 Comment: http://openpgpjs.org
 
-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
-CDjUbY1FxwlVJ4UZ7lz+8jWHO5jYY99adPoATpUaWYxm9oPxz/QR4kvgvLjl
-9Ti8379Y8qihzqsRmf6YLYyggknlt9Uyl2HjA+1zcwbDnb3I6g/XjTFUPy1D
-xZqqSEuCNDLh7m1+GDA3KXQnLIqOdcxOVzyFCDtKI9c6b0D0ezNkxUjgkoIp
-mxSSLDjzmHuPLsQVwqxP4KNU1gT7mXTnhlhsG2Vll/WZD+tuzGK8h9anf6/p
-4pCk61Dhj1hmb9msTaK4FGhmBMtJ6kQ4SzGOfFKG5IElAHidYgd0iz7AqEzX
-GttDkcHGM9iPIYUBY2r/538M/kxeVx5fBiWEkmWz5FMzqPRs3GZWYiAb2tnp
-WSDXW3B1mwznwcCkyUP6OP/c6FFmb6Rag/ZaItVAvVjmA7tXICLJPhYIs9hE
-I6zJSVZ81YtKg9Nb6Rx49qf18pQ1SWZNGrZrWaTJTLu4cu4c5v/czY5kyT0Y
-8RqNUlI5hwWU8G9LpJ5jv8dssrgcweTG/PEbCkzqz0R6W6VgDUyqo6WSGgoS
-B9or791lGcDazNT6CJ4/2Z1wBd4BSHkhSwfcPovGOleZFE24gLiG6puHyVjk
-WEIir2WXzhypwLkG/dn+ZJW1ezOvTb4gVVILHrWhNh8=
-=LoZg
------END PGP MESSAGE-----`
+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
++HrS+veTetqlRkQ=
+=JVnV
+-----END PGP MESSAGE-----
+`
 }).then((api)=>{
     // the vuforia API is ready, so we can start using it.
 
     // tell argon to download a vuforia dataset.  The .xml and .dat file must be together
     // in the web directory, even though we just provide the .xml file url here 
-    api.objectTracker.createDataSet("../resources/datasets/ArgonTutorial.xml").then( (dataSet)=>{
+    api.objectTracker.createDataSet("getting_started_database/getting_started_database.xml").then( (dataSet)=>{
         // the data set has been succesfully downloaded
         console.log('Created DataSet ' + dataSet.id)
 
@@ -454,7 +461,7 @@ WEIir2WXzhypwLkG/dn+ZJW1ezOvTb4gVVILHrWhNh8=
             // coordinate frame relative to the camera.  Because they are Cesium
             // entities, we can ask for their pose in any coordinate frame we know
             // about.
-            const gvuBrochureEntity = app.context.subscribeToEntityById(trackables['GVUBrochure'].id)
+            const gvuBrochureEntity = app.context.subscribeToEntityById(trackables['scan_EW_front'].id)
             
             // the updateEvent is called each time the 3D world should be
             // rendered, before the renderEvent.  The state of your application

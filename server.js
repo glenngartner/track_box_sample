@@ -16,10 +16,10 @@ pem.createCertificate({ days:1, selfSigned:true }, function(err, keys) {
     app.use(express.static('_site/.'));
 
     // Create an HTTPS service
-    var httpsServer = https.createServer({
-        key: keys.serviceKey,
-        cert: keys.certificate
-    }, app).listen(0);
+    // var httpsServer = https.createServer({
+    //     key: keys.serviceKey,
+    //     cert: keys.certificate
+    // }, app).listen(0);
 
     // Create an http service
     http.createServer(app).listen(httpPort);

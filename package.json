@@ -13,7 +13,7 @@
   "scripts": {
     "serve": "npm start",
     "devsite": "jekyll build --config _config-develop.yml",
-    "build": "tsc -p code/geopose && tsc -p code/vuforia && tsc -p code/directionsHTML && tsc -p code/directionsWebGL && tsc -p code/panorama-reality && tsc -p code/panoramas && tsc -p code/vuforia && tsc -p code/vuforiaDecals && tsc -p code/streetview-reality && tsc -p code/jsartoolkit && tsc -p code/vuforia-jsartoolkit && tsc -p code/tango",
+    "build": "tsc -p code/vuforiaDecals",
     "distsite": "jekyll build --config _config-master.yml"
   },
   "dependencies": {
