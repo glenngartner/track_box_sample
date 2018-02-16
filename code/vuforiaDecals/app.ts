@@ -47,7 +47,7 @@ app.view.element.appendChild(hud.domElement);
 // the world with the identity orientation. 
 
 // variables for the application 
-var mesh, decal;
+var mesh: THREE.Mesh, decal;
 var line;
 
 var intersection = {
@@ -255,20 +255,9 @@ function checkIntersection() {
 
 function loadLeePerrySmith() {
 
-    var loader = new THREE.JSONLoader();
+    // var loader = new THREE.JSONLoader();
 
-    loader.load( '../resources/obj/leeperrysmith/LeePerrySmith.js', function( geometry ) {
-
-        var material = new THREE.MeshPhongMaterial( {
-            specular: 0x111111,
-            map: textureLoader.load( '../resources/obj/leeperrysmith/Map-COL.jpg' ),
-            specularMap: textureLoader.load( '../resources/obj/leeperrysmith/Map-SPEC.jpg' ),
-            normalMap: textureLoader.load( '../resources/obj/leeperrysmith/Infinite-Level_02_Tangent_SmoothUV.jpg' ),
-            normalScale: new THREE.Vector2( 0.75, 0.75 ),
-            shininess: 25
-        } );
-
-        // var geometry = new THREE.BoxGeometry(1, 1, 1);
+    // loader.load( '../resources/obj/leeperrysmith/LeePerrySmith.js', function( geometry ) {
 
         // var material = new THREE.MeshStandardMaterial( {
         //     color: 0xaa0000,
@@ -276,15 +265,31 @@ function loadLeePerrySmith() {
         //     metalness: 0
         // });
 
-        // mesh.position.set(0, 0, 0);
+        //     new THREE.MeshPhongMaterial( {
+        //     specular: 0x111111,
+        //     map: textureLoader.load( '../resources/obj/leeperrysmith/Map-COL.jpg' ),
+        //     specularMap: textureLoader.load( '../resources/obj/leeperrysmith/Map-SPEC.jpg' ),
+        //     normalMap: textureLoader.load( '../resources/obj/leeperrysmith/Infinite-Level_02_Tangent_SmoothUV.jpg' ),
+        //     normalScale: new THREE.Vector2( 0.75, 0.75 ),
+        //     shininess: 25
+        // } );
 
+        var geometry = new THREE.BoxGeometry(1, 1, 1);
+
+        var material = new THREE.MeshStandardMaterial( {
+            color: 0xaa0000,
+            roughness: .25,
+            metalness: 0
+        });
         mesh = new THREE.Mesh( geometry, material );
+
+        mesh.position.set(0, .0375, -.07);
 
         // add the model to the headModel object, not the scene
         headModel.add( mesh );
         mesh.scale.set( .02, .02, .02 );
         mesh.rotation.x = THREE.Math.degToRad(90);
-    } );
+    // } );
 }
 
 function shoot() {
